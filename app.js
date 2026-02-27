@@ -17,6 +17,15 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something Broke!!!");
 });
 
+// Async Error Handler (Always wrap async errors in try...catches)
+app.get("/async", (req, res) => {
+  try {
+    throw new Error("An Error has Occurred");
+  } catch (err) {
+    next(err);
+  }
+});
+
 // Starting Server.....
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
