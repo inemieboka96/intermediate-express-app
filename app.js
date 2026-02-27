@@ -1,18 +1,32 @@
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+import path from "path";
 // Routes
 import userRoutes from "./routes/users.js";
 import productRoutes from "./routes/products.js";
+import { fileURLToPath } from "url";
 
 // Use PORT 4000 in case of any errors
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+// Path Variables
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// GET "/"
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 // Route Handlers
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
+
+// Serving Public Files
+app.use(express.static(path.join(__dirname, "public")));
 
 // Error Handling
 app.use((err, req, res, next) => {
