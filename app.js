@@ -22,8 +22,8 @@ app.get("/", (req, res) => {
 });
 
 // Route Handlers
-app.use("/users", userRoutes);
-app.use("/products", productRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
 
 // Serving Public Files
 app.use(express.static(path.join(__dirname, "public")));
