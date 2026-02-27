@@ -10,7 +10,7 @@ userRouter.get("/", (req, res) => {
 
 // GET '/users/:id'
 userRouter.get("/:id", (req, res) => {
-  const user = users.find(u => u.id === parseInt(req.params.id));
+  const user = users.find(u => u.id === parseInt(req.params.id)); // Get Specific user by ID
   if (user) {
     res.json(user);
   } else {

@@ -1,16 +1,18 @@
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
-// User routes frmo 
+// Routes
 import userRoutes from "./routes/users.js";
+import productRoutes from "./routes/products.js";
 
 // Use PORT 4000 in case of any errors
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-// User Routes Handler
+// Route Handlers
 app.use("/users", userRoutes);
+app.use("/products", productRoutes);
 
 // Error Handling
 app.use((err, req, res, next) => {
@@ -18,7 +20,7 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something Broke!!!"); // Internal Server Error
 });
 
-// Async Error Handler (Always wrap async errors in try...catches)
+// Async Error Handler (Always wrap async errors in try...catches⚠️)
 app.get("/async", (req, res) => {
   try {
     throw new Error("An Error has Occurred");
@@ -27,7 +29,7 @@ app.get("/async", (req, res) => {
   }
 });
 
-// Starting Server.....
+// Start Server
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });
