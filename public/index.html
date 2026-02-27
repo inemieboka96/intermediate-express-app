@@ -10,7 +10,7 @@
       .glass {
         background: rgba(255, 255, 255, 0.7);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px); 
         border-radius: 1.5rem;
         border: 1px solid rgba(255, 255, 255, 0.18);
       }
@@ -68,12 +68,16 @@
         >
           <i class="fa-solid fa-circle-info text-blue-400"></i> Overview
         </h2>
-        <p class="text-gray-700 text-lg max-w-3xl">
+        <p class="text-gray-700 text-lg max-w-3xl mb-6">
           This API provides endpoints to manage users and products. Built with
           <span class="font-semibold text-blue-700">Express.js</span>, it's
           perfect for learning RESTful API concepts, prototyping, or as a
           foundation for more advanced applications.
         </p>
+        <a href="/api.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg shadow hover:scale-105 hover:from-blue-700 hover:to-purple-700 transition mb-2">
+          <i class="fa-solid fa-link"></i> View API Endpoints
+        </a>
+        <p class="text-gray-500 text-sm mt-2">See all available API endpoints on the new <span class="underline">API Endpoints</span> page.</p>
       </section>
       <section class="mb-6">
         <h2
@@ -92,35 +96,35 @@
               <li>
                 <span
                   class="font-mono bg-blue-50 px-2 py-1 rounded text-blue-800"
-                  >GET /users</span
+                  >GET /api/users</span
                 >
                 <span class="text-gray-600">- List all users</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-blue-50 px-2 py-1 rounded text-blue-800"
-                  >GET /users/:id</span
+                  >GET /api/users/:id</span
                 >
                 <span class="text-gray-600">- Get a user by ID</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-blue-50 px-2 py-1 rounded text-blue-800"
-                  >POST /users</span
+                  >POST /api/users</span
                 >
                 <span class="text-gray-600">- Create a new user</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-blue-50 px-2 py-1 rounded text-blue-800"
-                  >PUT /users/:id</span
+                  >PUT /api/users/:id</span
                 >
                 <span class="text-gray-600">- Update a user</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-blue-50 px-2 py-1 rounded text-blue-800"
-                  >DELETE /users/:id</span
+                  >DELETE /api/users/:id</span
                 >
                 <span class="text-gray-600">- Delete a user</span>
               </li>
@@ -137,35 +141,35 @@
               <li>
                 <span
                   class="font-mono bg-purple-50 px-2 py-1 rounded text-purple-800"
-                  >GET /products</span
+                  >GET /api/products</span
                 >
                 <span class="text-gray-600">- List all products</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-purple-50 px-2 py-1 rounded text-purple-800"
-                  >GET /products/:id</span
+                  >GET /api/products/:id</span
                 >
                 <span class="text-gray-600">- Get a product by ID</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-purple-50 px-2 py-1 rounded text-purple-800"
-                  >POST /products</span
+                  >POST /api/products</span
                 >
                 <span class="text-gray-600">- Create a new product</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-purple-50 px-2 py-1 rounded text-purple-800"
-                  >PUT /products/:id</span
+                  >PUT /api/products/:id</span
                 >
                 <span class="text-gray-600">- Update a product</span>
               </li>
               <li>
                 <span
                   class="font-mono bg-purple-50 px-2 py-1 rounded text-purple-800"
-                  >DELETE /products/:id</span
+                  >DELETE /api/products/:id</span
                 >
                 <span class="text-gray-600">- Delete a product</span>
               </li>
