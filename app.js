@@ -13,12 +13,18 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// GET "/"
+// Serving Public Files
+app.use(express.static(path.join(__dirname, "public")));
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// GET "/" - Default URL
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// GET "/api"
+// GET "/api" - API Endpoints
 app.get("/api", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "api.html")); // Return the API Endpoints Page
 });
@@ -26,9 +32,6 @@ app.get("/api", (req, res) => {
 // Route Handlers
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
-
-// Serving Public Files
-// app.use(express.static(path.join(__dirname, "public")));
 
 // Error Handling
 app.use((err, req, res, next) => {
