@@ -2,7 +2,7 @@
 export const users = [
   {
     id: 1,
-    name: "Alice Johnson",
+    name: "Alice",
     email: "alice.johnson@example.com",
     role: "admin",
     active: true,

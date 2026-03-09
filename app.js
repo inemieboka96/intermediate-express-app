@@ -7,9 +7,6 @@ import userRoutes from "./routes/users.js";
 import productRoutes from "./routes/products.js";
 import { fileURLToPath } from "url";
 
-// Use PORT 4000 in case of any errors
-const PORT = process.env.PORT || 3000;
-
 const app = express();
 
 // Path Variables
@@ -21,12 +18,17 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+// GET "/api"
+app.get("/api", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "api.html")); // Return the API Endpoints Page
+});
+
 // Route Handlers
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 
 // Serving Public Files
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 // Error Handling
 app.use((err, req, res, next) => {
@@ -43,7 +45,16 @@ app.get("/async", (req, res) => {
   }
 });
 
+// Query Strings & URL Parameters
+/*
+    Route Params: '/api/users/:id' --> req.params.id
+    Query Params: '/search?name=John' --> req.query.name
+*/
+
+
+
 // Start Server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });
